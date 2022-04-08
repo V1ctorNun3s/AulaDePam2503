@@ -1,8 +1,10 @@
 import Cabecalho from './src/componets/cabecalho';
 import React from './src/componets/botao';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Botao from './src/componets/botao';
+import Jogos from './src/componets/Jogos';
+import dados from './src/dados';
 
 export default function App() {
   return (
@@ -35,7 +37,19 @@ export default function App() {
            cor2="purple"
       ></Botao>
 
+      <FlatList
+      horizontal={true}
+      data= {Dados}
+      keyExtractor = {(item) => item.id}
+      renderItem = { ({ item }) => (
 
+      <Jogos
+      titulo = {item.nome}
+      imagem = {item.imagem}
+      valor ={item.valor}
+      />
+      )}
+      
     </View>
   );
 }
