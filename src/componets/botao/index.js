@@ -5,7 +5,7 @@ import { Ionicons} from '@expo/vector-icons';
 export default function botao({Logo,texto,cor,Logo2,texto2,cor2}){
 
     return(
-        <View style={estilo.containerBotoes}>
+        <View style={estilo.containerBotoes1}>
         <TouchableOpacity style={[estilo.botoes ,{backgroundColor:cor}]}>
         <Ionicons name= {Logo} size={20} color="white"
 
@@ -18,6 +18,7 @@ export default function botao({Logo,texto,cor,Logo2,texto2,cor2}){
             <Ionicons name= {Logo2} size={20} color="white"
 
         style= {{marginRight:10}}/>
+
             <Text style ={estilo.textoBotao} > {texto2} </Text>
 
             </TouchableOpacity>
@@ -29,7 +30,7 @@ export default function botao({Logo,texto,cor,Logo2,texto2,cor2}){
 const estilo = StyleSheet.create({
 
     containerBotoes1:{
-        flexDirection:'row',
+        flexDirection: "row",
         marginBottom:10,
         justifyContent:"center"
     },
@@ -44,7 +45,6 @@ const estilo = StyleSheet.create({
         width:'45%',
         alignItems:'center',
         justifyContent:'flex-start',
-
         fontSize:12,
         color:'white',
         flexDirection:'row',

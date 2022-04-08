@@ -10,8 +10,30 @@ export default function App() {
       <Cabecalho></Cabecalho>
     <Botao Logo="game-controller" 
            texto="Jogos" 
-           cor="black">
-      </Botao>
+           cor="black"
+           Logo2="book"
+           texto2="Livros"
+           cor2="blue"
+           >
+    </Botao>
+    
+    <Botao
+           Logo="ios-musical-notes"
+           texto="Musicas"
+           cor="green"
+           Logo2="ios-apps"
+           texto2="Apps"
+           cor2="orange"
+          >
+      </Botao> 
+      <Botao
+           Logo="md-film"
+           texto="Filmes"
+           cor="red"
+           Logo2="library"
+           texto2="Biblioteca"
+           cor2="purple"
+      ></Botao>
 
 
     </View>
@@ -26,3 +48,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
