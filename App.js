@@ -4,7 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Botao from './src/componets/botao';
 import Jogos from './src/componets/Jogos';
-import dados from './src/dados';
+import DADOS from './src/dados/dadosJogos';
+import jogoNovo from './src/componets/jogoNovo'
 
 export default function App() {
   return (
@@ -37,9 +38,10 @@ export default function App() {
            cor2="purple"
       ></Botao>
 
+      <Text style= {styles.textos}> Jogos em Destaques</Text>
       <FlatList
       horizontal={true}
-      data= {Dados}
+      data= {DADOS}
       keyExtractor = {(item) => item.id}
       renderItem = { ({ item }) => (
 
@@ -49,7 +51,22 @@ export default function App() {
       valor ={item.valor}
       />
       )}
-      
+      />
+
+      <Text style= {styles.textos}> Jogos Novos</Text>
+      <FlatList
+      horizontal={true}
+      data= {DADOS}
+      keyExtractor = {(item) => item.id}
+      renderItem = { ({ item }) => (
+
+      <Jogos
+      titulo = {item.nome}
+      imagem = {item.imagem}
+      valor ={item.valor}
+      />
+      )}
+      />
     </View>
   );
 }
@@ -61,5 +78,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  textos: {
+    fontSize: 30,
+    marginBottom: 12,
+    margin: 20,
+  }
+
+
 });
 
